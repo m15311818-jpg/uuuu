@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1a1a2e">
+<title>شركة محمد إبراهيم للمقاولات</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+
+<style>
+/* ═══════════════════════════════════════
+   Reset & Base
+   ═══════════════════════════════════════ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0f0f1e;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════
+   Navigation Bar
+   ═══════════════════════════════════════ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 15, 30, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 165, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.navbar.scrolled {
+  padding: 10px 30px;
+  background: rgba(15, 15, 30, 0.95);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.logo-icon {
+  font-size: 30px;
+  filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.6));
+}
+
+.logo-text span {
+  color: #ff9500;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #c0c0d0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #ff9500;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: #ff9500;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════
+   Hero Section
+   ═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px 60px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(15, 15, 30, 0.85), rgba(30, 20, 50, 0.75)),
+              url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80') center/cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 149, 0, 0.15), transparent 60%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 900px;
+  z-index: 2;
+  animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 149, 0, 0.15);
+  border: 1px solid rgba(255, 149, 0, 0.4);
+  border-radius: 50px;
+  font-size: 14px;
+  color: #ff9500;
+  margin-bottom: 25px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 149, 0, 0.4); }
+  50% { transform: scale(1.03); box-shadow: 0 0 20px 5px rgba(255, 149, 0, 0.1); }
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(90deg, #ff9500, #ffb800, #ff9500);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+.hero .tagline {
+  font-size: 20px;
+  color: #c0c0d0;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 16px 36px;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff9500, #ffb800);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(255, 149, 0, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(255, 149, 0, 0.6);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ff9500;
+  font-size: 28px;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ═══════════════════════════════════════
+   Sections
+   ═══════════════════════════════════════ */
+.section {
+  padding: 90px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.section-header h2 span {
+  color: #ff9500;
+}
+
+.section-header p {
+  color: #8892c0;
+  font-size: 17px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════
+   Services / Features
+   ═══════════════════════════════════════ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  padding: 35px 25px;
+  background: rgba(30, 30, 55, 0.5);
+  border: 1px solid rgba(255, 149, 0, 0.1);
+  border-radius: 20px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, #ff9500, #ffb800);
+  transition: height 0.4s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 149, 0, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.service-card:hover::before {
+  height: 100%;
+}
+
+.service-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  display: inline-block;
+  filter: drop-shadow(0 0 15px rgba(255, 149, 0, 0.5));
+}
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.service-card p {
+  color: #8892c0;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ═══════════════════════════════════════
+   Projects Gallery
+   ═══════════════════════════════════════ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  position: relative;
+  height: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px;
+  transition: all 0.4s;
+}
+
+.project-card:hover .project-overlay {
+  background: linear-gradient(180deg, rgba(255, 149, 0, 0.2), rgba(0, 0, 0, 0.95));
+}
+
+.project-overlay h4 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.project-overlay p {
+  color: #ff9500;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════
+   Stats
+   ═══════════════════════════════════════ */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(30, 30, 55, 0.5);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 149, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 149, 0, 0.4);
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff9500, #ffb800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: #8892c0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════
+   Contact Section
+   ═══════════════════════════════════════ */
+.contact-section {
+  background: linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(255, 184, 0, 0.05));
+  border: 2px solid rgba(255, 149, 0, 0.3);
+  border-radius: 30px;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 40px 20px;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 149, 0, 0.1), transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+.contact-section h2 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-section h2 span {
+  color: #ff9500;
+}
+
+.contact-section p {
+  color: #c0c0d0;
+  font-size: 18px;
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+.phone-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px 45px;
+  background: linear-gradient(135deg, #ff9500, #ffb800);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 60px;
+  font-size: 26px;
+  font-weight: 900;
+  box-shadow: 0 15px 50px rgba(255, 149, 0, 0.5);
+  transition: all 0.3s;
+  position: relative;
+  z-index: 2;
+  font-variant-numeric: tabular-nums;
+  animation: pulse-button 2s ease-in-out infinite;
+}
+
+@keyframes pulse-button {
+  0%, 100% { transform: scale(1); box-shadow: 0 15px 50px rgba(255, 149, 0, 0.5); }
+  50% { transform: scale(1.02); box-shadow: 0 15px 60px rgba(255, 149, 0, 0.8); }
+}
+
+.phone-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(255, 149, 0, 0.7);
+}
+
+.phone-icon {
+  font-size: 32px;
+  animation: ring 1.5s ease-in-out infinite;
+}
+
+@keyframes ring {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
+
+.phone-number {
+  letter-spacing: 2px;
+  direction: ltr;
+}
+
+.contact-note {
+  margin-top: 25px;
+  color: #8892c0;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ═══════════════════════════════════════
+   Footer
+   ═══════════════════════════════════════ */
+.footer {
+  padding: 40px 20px 30px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 149, 0, 0.15);
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-logo span {
+  color: #ff9500;
+}
+
+.footer p {
+  color: #667;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer .copyright {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 149, 0, 0.1);
+  color: #555;
+  font-size: 13px;
+}
+
+/* ═══════════════════════════════════════
+   Floating Call Button
+   ═══════════════════════════════════════ */
+.floating-call {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9500, #ffb800);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(255, 149, 0, 0.6);
+  z-index: 999;
+  animation: pulse-button 2s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+
+.floating-call:hover {
+  transform: scale(1.15) rotate(-15deg);
+}
+
+/* ═══════════════════════════════════════
+   Animations on Scroll
+   ═══════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .hero h1 {
+    font-size: 34px;
+  }
+  
+  .hero .tagline {
+    font-size: 16px;
+  }
+  
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .section-header h2 {
+    font-size: 30px;
+  }
+  
+  .contact-section {
+    padding: 45px 25px;
+    border-radius: 20px;
+  }
+  
+  .contact-section h2 {
+    font-size: 28px;
+  }
+  
+  .contact-section p {
+    font-size: 16px;
+  }
+  
+  .phone-button {
+    padding: 18px 32px;
+    font-size: 20px;
+  }
+  
+  .phone-icon {
+    font-size: 26px;
+  }
+  
+  .floating-call {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .stat-number {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+  
+  .btn {
+    padding: 14px 24px;
+    font-size: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .phone-button {
+    padding: 16px 24px;
+    font-size: 17px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ Navbar ═══ -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <span class="logo-icon">🏗️</span>
+    <span class="logo-text">شركة <span>محمد إبراهيم</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">الرئيسية</a></li>
+    <li><a href="#services">خدماتنا</a></li>
+    <li><a href="#projects">مشاريعنا</a></li>
+    <li><a href="#contact">اتصل بنا</a></li>
+  </ul>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</nav>
+
+<!-- ═══ Hero Section ═══ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">⭐ خبرة أكثر من 20 عاماً في المقاولات</div>
+    <h1>
+      مرحباً بكم في<br>
+      شركة <span class="highlight">محمد إبراهيم</span><br>
+      للمقاولات العامة
+    </h1>
+    <p class="tagline">
+      نبني الثقة قبل المباني — خدمات هندسية متكاملة بأعلى معايير الجودة والدقة
+    </p>
+    <div class="hero-buttons">
+      <a href="tel:01091947950" class="btn btn-primary">
+        📞 اتصل بنا الآن
+      </a>
+      <a href="#services" class="btn btn-secondary">
+        🏗️ تعرف على خدماتنا
+      </a>
+    </div>
+  </div>
+  <a href="#services" class="scroll-indicator">▼</a>
+</section>
+
+<!-- ═══ Services Section ═══ -->
+<section class="section" id="services">
+  <div class="section-header reveal">
+    <h2>خدماتنا <span>المتميزة</span></h2>
+    <p>نقدم مجموعة شاملة من الخدمات الهندسية والإنشائية بأعلى معايير الجودة العالمية</p>
+  </div>
+  
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🏗️</div>
+      <h3>الإنشاءات العامة</h3>
+      <p>تنفيذ المشاريع الإنشائية الكبرى من الألف إلى الياء بأحدث التقنيات العالمية</p>
+    </div>
+    
+    <div class="service-card reveal">
+      <div class="service-icon">🏢</div>
+      <h3>المباني السكنية</h3>
+      <p>تصميم وتنفيذ العمائر السكنية والفيلات بأرقى التصاميم وأجود المواد</p>
+    </div>
+    
+    <div class="service-card reveal">
+      <div class="service-icon">🛣️</div>
+      <h3>الطرق والكباري</h3>
+      <p>إنشاء الطرق والكباري والأنفاق بأحدث المعايير الهندسية والسلامة</p>
+    </div>
+    
+    <div class="service-card reveal">
+      <div class="service-icon">🎨</div>
+      <h3>التشطيبات الفاخرة</h3>
+      <p>تشطيبات داخلية وخارجية بأرقى المستويات وأحدث الصيحات العالمية</p>
+    </div>
+    
+    <div class="service-card reveal">
+      <div class="service-icon">📐</div>
+      <h3>الاستشارات الهندسية</h3>
+      <p>استشارات هندسية متخصصة من خبراء معتمدين لضمان نجاح مشروعك</p>
+    </div>
+    
+    <div class="service-card reveal">
+      <div class="service-icon">🔧</div>
+      <h3>الصيانة والتطوير</h3>
+      <p>خدمات الصيانة الدورية وتطوير المباني القائمة بأعلى جودة</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Stats Section ═══ -->
+<section class="section">
+  <div class="stats">
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="500">0+</div>
+      <div class="stat-label">مشروع منجز</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="20">0+</div>
+      <div class="stat-label">سنة خبرة</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="150">0+</div>
+      <div class="stat-label">عامل وفني</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="98">0%</div>
+      <div class="stat-label">رضا العملاء</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Projects Section ═══ -->
+<section class="section" id="projects">
+  <div class="section-header reveal">
+    <h2>مشاريعنا <span>الأخيرة</span></h2>
+    <p>مجموعة من أبرز المشاريع التي قمنا بتنفيذها في مختلف المجالات</p>
+  </div>
+  
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="مشروع بناء" loading="lazy">
+      <div class="project-overlay">
+        <h4>مجمع سكني متكامل</h4>
+        <p>📍 مدينة نصر — القاهرة</p>
+      </div>
+    </div>
+    
+    <div class="project-card reveal">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="مشروع بناء" loading="lazy">
+      <div class="project-overlay">
+        <h4>برج تجاري فاخر</h4>
+        <p>📍 التجمع الخامس — القاهرة</p>
+      </div>
+    </div>
+    
+    <div class="project-card reveal">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="مشروع بناء" loading="lazy">
+      <div class="project-overlay">
+        <h4>فيلات الحديقة</h4>
+        <p>📍 الشيخ زايد — الجيزة</p>
+      </div>
+    </div>
+    
+    <div class="project-card reveal">
+      <img src="https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=800&q=80" alt="مشروع بناء" loading="lazy">
+      <div class="project-overlay">
+        <h4>مشروع تطوير طرق</h4>
+        <p>📍 محافظة الشرقية</p>
+      </div>
+    </div>
+    
+    <div class="project-card reveal">
+      <img src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?w=800&q=80" alt="مشروع بناء" loading="lazy">
+      <div class="project-overlay">
+        <h4>مركز تجاري كبير</h4>
+        <p>📍 مدينة العبور</p>
+      </div>
+    </div>
+    
+    <div class="project-card reveal">
+      <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="مشروع بناء" loading="lazy">
+      <div class="project-overlay">
+        <h4>مجمع صناعي</h4>
+        <p>📍 العاشر من رمضان</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Contact Section ═══ -->
+<section class="contact-section" id="contact">
+  <h2>تواصل <span>معنا</span> الآن</h2>
+  <p>نحن في خدمتك على مدار الساعة — اتصل بنا للحصول على استشارة مجانية</p>
+  
+  <a href="tel:01091947950" class="phone-button">
+    <span class="phone-icon">📞</span>
+    <span class="phone-number">01091947950</span>
+  </a>
+  
+  <p class="contact-note">
+    اضغط على الرقم للاتصال مباشرة<br>
+    أو تواصل معنا عبر WhatsApp بنفس الرقم
+  </p>
+</section>
+
+<!-- ═══ Footer ═══ -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">🏗️ شركة <span>محمد إبراهيم</span> للمقاولات</div>
+    <p>
+      نبني الثقة قبل المباني<br>
+      خبرة أكثر من 20 عاماً في مجال المقاولات العامة والإنشاءات
+    </p>
+    <div class="copyright">
+      © 2025 شركة محمد إبراهيم للمقاولات — جميع الحقوق محفوظة
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ Floating Call Button ═══ -->
+<a href="tel:01091947950" class="floating-call" title="اتصل بنا">📞</a>
+
+<script>
+// ═══════════════════════════════════════
+// Navbar scroll effect
+// ═══════════════════════════════════════
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// ═══════════════════════════════════════
+// Mobile Menu
+// ═══════════════════════════════════════
+function toggleMenu() {
+  const links = document.querySelector('.nav-links');
+  if (links.style.display === 'flex') {
+    links.style.display = 'none';
+  } else {
+    links.style.display = 'flex';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '100%';
+    links.style.right = '0';
+    links.style.left = '0';
+    links.style.background = 'rgba(15, 15, 30, 0.98)';
+    links.style.padding = '20px';
+    links.style.gap = '15px';
+    links.style.borderBottom = '1px solid rgba(255, 149, 0, 0.2)';
+  }
+}
+
+// إغلاق القائمة عند النقر على رابط
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      document.querySelector('.nav-links').style.display = 'none';
+    }
+  });
+});
+
+// ═══════════════════════════════════════
+// Reveal on Scroll
+// ═══════════════════════════════════════
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 100);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// ═══════════════════════════════════════
+// Counter Animation
+// ═══════════════════════════════════════
+const counters = document.querySelectorAll('.stat-number');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.textContent.includes('%') ? '%' : '+';
+      let current = 0;
+      const increment = target / 60;
+      
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          el.textContent = Math.floor(current) + suffix;
+          requestAnimationFrame(updateCounter);
+        } else {
+          el.textContent = target + suffix;
+        }
+      };
+      
+      updateCounter();
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(c => counterObserver.observe(c));
+
+// ═══════════════════════════════════════
+// Smooth scroll (already in CSS via scroll-behavior)
+// ═══════════════════════════════════════
+console.log('🏗️ موقع شركة محمد إبراهيم للمقاولات — جاهز');
+</script>
+
+</body>
+</html>
